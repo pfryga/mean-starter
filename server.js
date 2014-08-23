@@ -1,8 +1,9 @@
 var express = require('express');
-var app 	= express();
+var app = express();
 var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
+var Bear = require('./app/models/bear');
 
 var db = require('./config/db');
 var port = process.env.PORT || 8080;
@@ -18,7 +19,7 @@ app.use(methodOverride('X-HTTP-Method-Override')); // override with the X-HTTP-M
 app.use(express.static(__dirname + '/public')); // set the static files location /public/img will be /img for users
 
 // routes ==================================================
-require('./app/routes')(app); // configure our routes
+require('./app/routes')(app, Bear); // configure our routes
 
 app.listen(port);
 console.log('Magic happens on port ' + port); 

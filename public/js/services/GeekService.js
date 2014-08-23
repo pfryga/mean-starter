@@ -3,7 +3,7 @@ angular.module('GeekService', []).factory('Geek', ['$http', function($http) {
 	return {
 		// call to get all nerds
 		get : function() {
-			return $http.get('/api/geeks');
+			return $http.get('/api/nerds');
 		},
 
 		// call to POST and create a new geek
