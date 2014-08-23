@@ -1,3 +1,4 @@
-angular.module('MainCtrl', []).controller('MainController', function($scope){
-	$scope.tagline = 'example string';
-});
+angular.module('MainCtrl', [])
+	.controller('MainController', function($scope) {
+		$scope.tagline = 'example string';
+	});
